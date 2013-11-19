@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+<!--
+    Exchange the line above for this to enable offline support
+    <html manifest="manifest.appcache">
+
+    Please make your homework before doing this:
+        http://www.alistapart.com/articles/application-cache-is-a-douchebag/
+        http://appcachefacts.info
+
+    This might be necessary to set up on your server, to make sure
+    files are updated when the appcache file itself is:
+        https://github.com/robnyman/Firefox-OS-Boilerplate-App/blob/gh-pages/.htaccess
+ -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- <link rel="stylesheet" type="text/css" href="css/base.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/headers.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/buttons.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/toolbars.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="http://code.jquery.com/ui/1.8.21/themes/base/jquery-ui.css" rel="stylesheet">
+    <link href="http://code.jquery.com/ui/1.8.21/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <!-- <script src="js/jquery-ui.min.js"></script> -->
+    <!-- prerequisites -->
+    <!-- <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+    <!-- <script src="js/jquery.touchy.min.js"></script> -->
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+
+    <!-- <script src="js/jquery.ui.rotatable.js"></script> -->
+
+
+
+    <!-- this is small and will allow you to override look/feel of handle -->
+    <!-- <link rel="stylesheet" href="css/jquery.ui.rotatable.css"> -->
+    <link href='css/hammer-style.css' rel='stylesheet' type='text/css'>
+
+    <title>Sticky</title>
+
+
+
+</head>
+
+<body>
+
+    <div class="leftside">leftside</div>
+    <div class="topside">topside</div>
+
+    <div id="intro-screen" class="page">
+      <div class="top-area">
+        <div class="main-text">
+              <h1>Sticky</h1>
+        </div>
+        <div class="instructions">
+          <div class="row">
+              <div class="col-xs-4 text-center">Create a new canvas here.<p>&#9660;</p></div>
+              <div class="col-xs-4 text-center">Add a sticker here.<p>&#9660;</p></div>
+              <div class="col-xs-4 text-center">Tap here to finish!<p>&#9660;</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-area"></div>
+    </div>
+
+    <div id="canvas-area" class="page">
+
+      <div id="zoom" class="zoomProps" >
+          <div class="polaroid">
+              <img src="images/stickers/fox-mask.png" alt="" width="100" height="100" id="newimage"/>
+          </div>
+      </div>
+
+      <canvas id="canvas"></canvas>
+
+      <div class="topbarslidedown">
+        <div class="row">
+            <div class="col-xs-4 text-center"><button class="btn btn-default btn-remove btn-red">&#x2718;</button></div>
+            <div class="col-xs-4 text-center middletext">Place it!</div>
+            <div class="col-xs-4 text-center"><button class="btn btn-default btn-place btn-green">&#x2714;</button></div>
+        </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="row">
+            <div class="col-xs-4 text-center"><button class="btn btn-default pick-from-lib-btn"><img src="images/buttons/plus-sign.png"></button></div>
+            <div class="col-xs-4 text-center"><button class="btn btn-primary stickers-btn"><img src="images/buttons/btn-sticker.png"></button></div>
+            <div class="col-xs-4 text-center"><button class="btn btn-default done-btn"><img src="images/buttons/btn-check.png"></button></div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="done-panel" class="panel panel-default">
+      <div class="panel-body">
+        <button type="button" class="btn btn-primary btn-lg btn-block" id="save-btn" >Save to Gallery</button>
+        <button type="button" class="btn btn-default btn-lg btn-block" id="btn-clear">Clear All</button>
+        <button type="button" class="btn btn-default btn-lg btn-block" id="btn-cancel" href="">Cancel</button>
+      </div>
+    </div>
+
+    <div id="stickers-screen" class="page">
+      <!-- stickers go here and slideup/down-->
+      <div class="top-bar">
+        <h2>Choose a sticker!</h2>
+        <button class="btn btn-primary close-btn pull-right"><img src="images/buttons/btn-down.png"></button>
+      </div>
+      <div class="main-section">
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="sticker sticker-1">
+              <img src="images/stickers/fox-mask.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-2">
+              <img src="images/stickers/sunglasses.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-3">
+              <img src="images/stickers/mustache.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="sticker sticker-4">
+              <img src="images/stickers/hat.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-5">
+              <img src="images/stickers/scarf.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-6">
+              <img src="images/stickers/tail.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="sticker sticker-7">
+              <img src="images/stickers/bandana.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-8">
+              <img src="images/stickers/eyebrows.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-9">
+              <img src="images/stickers/eyepatch.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="sticker sticker-10">
+              <img src="images/stickers/beret.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-11">
+              <img src="images/stickers/earring.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+          <div class="col-xs-4">
+            <div class="sticker sticker-12">
+              <img src="images/stickers/bowtie.png" style="width: 100%; height: 100%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/base.js"></script>
+    <script type="text/javascript" src="js/webapp.js"></script>
+    <script type="text/javascript" src="js/offline.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script> -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/moveSticker.js"></script>
+    <script src="js/hammer.js"></script>
+    <script src="js/jquery.hammer.js"></script>
+    <script src="js/myLogic.js"></script>
+    <script type="text/javascript" src="js/saveImage.js"></script>
+    <script type="text/javascript" src="js/placingStickers.js"></script>
+
+
+    <!--
+        Loosely based on fxosstub: https://github.com/Jaxo/fxosstub
+    -->
+
+</body>
+</html>

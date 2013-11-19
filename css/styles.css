@@ -1,0 +1,315 @@
+@font-face {
+    font-family: FiraSansOT-Bold;
+    src: url('../../fonts/FiraSansOT-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FiraSansOT-Medium;
+    src: url('../../fonts/FiraSansOT-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FiraSansOT-Regular;
+    src: url('../../fonts/FiraSansOT-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  overflow: hidden;
+}
+
+.leftside {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -9999;
+}
+
+.topside {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -9999;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btn-green {
+  background: #11a8ab;
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+}
+
+.btn-green:hover, .btn-green:active {
+  background: #209597;
+}
+
+.middletext {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.btn-red {
+  background: #e64c65;
+  color: #fff;
+  height: 44px;
+  width: 44px;
+  border: none;
+}
+
+.btn-red:hover, .btn-red:active {
+  background: #cc324b;
+}
+
+.top-bar {
+  background: #394264;
+  position: absolute;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  //padding: 6px;
+  //height: 11%;
+}
+
+.top-bar h2 {
+  font-size: 18px;
+  color: #FFF;
+  float: left;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.top-bar img {
+  height: 50%;
+  width: 50%;
+}
+
+.top-bar .btn {
+  height: 50px;
+  background: none;
+  border: none;
+  font-weight: bold;
+}
+
+.topbarslidedown {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 13px 0px 0px;
+  height: 70px;
+  background: #394264;
+  opacity: 0;
+  z-index: -9999;
+  color: #fff;
+}
+
+.topbarslidedown .row {
+  padding-top: 0px;
+}
+
+.bottom-bar {
+  position: absolute;
+  background: #394264;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  z-index: 9999;
+  //padding: 0px 6px 6px;
+}
+
+.bottom-bar .row {
+  padding-top: 0px;
+}
+
+.bottom-bar .btn {
+  height: 50px;
+  background: none;
+  border-color: none;
+  border: none;
+}
+
+.bottom-bar .btn:active {
+  background: #32374b;
+  border-color: none;
+  border-radius: 0px;
+}
+
+.bottom-bar img {
+  width: 50%;
+  height: 50%;
+}
+
+.instructions {
+  font-family: FiraSansOT-Regular;
+  color: #fff;
+  position: absolute;
+  bottom: 0px;
+}
+
+.bottom-area {
+  position: absolute;
+  height: 9%;
+  width: 100%;
+  background: rgba(35,37,43,0.2);
+  bottom: 0px;
+}
+
+.top-area {
+  background: rgba(35,37,43,0.8);
+  height: 91%;
+  width: 100%;
+  //background: blue;
+  position: absolute;
+}
+
+
+#intro-screen {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  //background: rgba(35,37,43,0.8);
+}
+
+.main-text {
+  font-family: FiraSansOT-Regular;
+  color: #fff;
+  margin: 60% auto;
+  text-align: center;
+}
+
+.main-text h1 {
+  font-family: FiraSansOT-Regular;
+}
+
+
+#newimage {
+  //border: 1px solid red;
+}
+
+.btn-toolbar{
+  text-align: center;
+}
+
+.zoomProps {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+/*  #zoomwrapper {
+  height: 377px;
+  width: 600px;
+  overflow: hidden;
+}*/
+
+.polaroid {
+  //background: #eee;
+  //border: 1px solid #fff;
+  //border: 1px solid #dfdfdf;
+  //border: 1px solid rgba(96,96,96,0.2);
+}
+
+
+
+
+
+
+
+/*canvas page*/
+
+#canvas-area {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: #fff;
+}
+
+#canvas {
+  //border:1px solid #000;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,1);
+  //margin: 4%;
+}
+#background {
+  display: none;
+}
+#sticker {
+  width: 150px; height: 150px; padding: 0.5em;
+}
+
+#resizable {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 10;
+}
+
+#resizable img {
+width: 100%;
+height: 100%;
+}
+
+#done-panel {
+  position: fixed;
+  width: 100%;
+  bottom: -300px;
+  z-index: 9999;
+  font-family: sans-serif;
+  background: #394264;
+  border: none;
+}
+
+#done-panel button {
+  border-radius: 4px;
+  border: none;
+}
+
+#done-panel #save-btn {
+  background: #3468af;
+}
+
+#bottom-bar .row {
+  padding-top: 0px;
+}
+
+
+/*stickers page*/
+
+
+#stickers-screen {
+  background: #50597b;
+  width: 100%;
+  height: 100%;
+  top: 1000px;
+  z-index: 9999;
+}
+
+.main-section {
+  margin: 26% auto;
+}
+
+.row {
+  padding-left: 6px;
+  padding-top: 6px;
+}
+
+.sticker {
+  //background: grey;
+  height: 80px;
+  width: 80px;
+}
